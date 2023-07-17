@@ -1,21 +1,46 @@
 <script setup>
-const tasks = [
-  { id: 1, title: "Complete project proposal", status: "In Progress" },
-  { id: 2, title: "Update website content", status: "Completed" },
-  { id: 3, title: "Fix bug in user authentication", status: "In Progress" },
-  { id: 4, title: "Prepare presentation slides", status: "Pending" },
-  { id: 5, title: "Test new feature implementation", status: "In Progress" },
+const persons = [
+  {
+    id: 1,
+    name: "Jane Doe",
+    profilePhoto: "//tailus.io/sources/blocks/classic/preview/images/woman1.jpg",
+    jobTitle: "CEO, Co-Founder",
+  },
+  {
+    id: 2,
+    name: "John Doe",
+    profilePhoto: "//tailus.io/sources/blocks/classic/preview/images/man.jpg",
+    jobTitle: "CTO",
+  },
+  {
+    id: 3,
+    name: "Jessy Doe",
+    profilePhoto: "//tailus.io/sources/blocks/classic/preview/images/woman.jpg",
+    jobTitle: "COO",
+  }
 ];
 </script>
 
 <template>
   <section class="mx-auto container">
-    <section class="mx-auto container space-y-3">
-        <div class="p-5 border border-gray-600 text-left" v-for="task in tasks" :key="task.id"> {{ task.id }}. {{ task.title }}</div>
-    </section>
+    <div class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6 px-32">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 text-center text-2xl text-gray-900 font-bold text-4xl">Team Members</h2>
+          <p class="text-gray-600 w-8/12 mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni deleniti veniam laudantium itaque perferendis dolor maxime incidunt voluptatem. </p>
+        </div>
+        <div class="grid gap-12 items-center grid-cols-3">
+          <div class="space-y-4 text-center" v-for="person in persons">
+            <img class="w-64 h-64 mx-auto object-cover rounded-xl w-40 h-60" :class="person.id==2?'h-80':'h-60'" :src="person.profilePhoto">
+            <div>
+              <h4 class="text-2xl">{{person.name}}</h4>
+              <span class="block text-sm text-gray-500">{{ person.jobTitle }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
