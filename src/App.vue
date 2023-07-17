@@ -7,29 +7,24 @@ const tasks = [
   { id: 5, title: "Test new feature implementation", status: "Completed" },
 ];
 
-function getCompletedTasks(){
-  return tasks.filter(task=>"Completed"==task.status)
+const person = {
+  name: "John Doe",
+  age: "45",
+  designation: "CTO",
+  email: "john@doe.com"
 }
 
-function getTasksInProgress(){
-  return tasks.filter(task=>"In Progress"==task.status)
-}
+
 </script>
 
 <template>
   <section class="mx-auto container">
     <section class="mx-auto container space-y-3">
-        <!-- <div class="p-5 border border-gray-600 text-left" v-for="(task,index) in tasks" :key="index">{{ task.id }}. {{ task.title }}</div> -->
-        <!-- <div class="p-5 border border-gray-600 text-left" v-for="(task,index) in tasks" :key="task.id">{{ task.id }}. {{ task.title }}</div> -->
-        <h2>Completed Tasks</h2>
-        <div class="p-5 border border-gray-600 text-left" v-for="(task,index) in getCompletedTasks()" :key="task.id">{{ task.id }}. {{ task.title }}</div>
-        <hr>
-        <h2>Tasks in Progress</h2>
-        <div class="p-5 border border-gray-600 text-left" v-for="(task,index) in getTasksInProgress()" :key="task.id">{{ task.id }}. {{ task.title }}</div>
+      <!-- <div class="p-5 border border-gray-600 text-left" v-for="(task, index) in tasks" :key="index">{{ task.id }} - {{task.title}} </div> -->
+      <div class="p-5 border border-gray-600 text-left" v-for="(value, property, index) in person" :key="property">{{ property }} = {{ value }}</div>
+
     </section>
   </section>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
